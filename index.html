@@ -3,18 +3,20 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Quietspace</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <link rel="stylesheet" href="app.css">
     <script type="text/javascript" src="app.js"></script>
   </head>
-  <body class="bg-black">
-
+  <body class="bg-black text-white font-serif">
 
     <div class="js-arrow-down fixed bottom-0 mb-5 inset-x-0">
       <img src="arrow-sm-down.svg" class="mx-auto animate__animated animate__fadeInUp animate__delay-5s">
     </div>
 
-    <section style="height: 150vh;" class="relative">
+    <section style="height: 1500px;" class="relative">
       <div class="h-screen flex justify-center items-center w-screen fixed">
         <div class="flex flex-col transform scale-75 sm:scale-100">
           <div class="mb-3 js-itsaboutthepractise">
@@ -30,9 +32,25 @@
       </div>
     </section>
 
-    <section style="height: 100vh;" class="relative text-white italic">
+    <section style="height: 1800px;" class="relative">
+      <div class="inset-0 fixed flex items-center ml-6 sm:ml-64 text-2xl js-clients opacity-0">Our clients</div>
+      <div class="space-y-32 flex flex-col items-center">
+        <img src="clients/rockstart.png" class="ml-32 w-32" srcset="clients/rockstart@2x.png 2x">
+        <img src="clients/techbbq.png" class="ml-32 w-32" srcset="clients/techbbq@2x.png 2x">
+        <img src="clients/coinify.png" class="ml-32 w-32" srcset="clients/coinify@2x.png 2x">
+        <img src="clients/impactly.png" class="ml-32 w-32" srcset="clients/impactly@2x.png 2x">
+        <img src="clients/trackunit.png" class="ml-32 w-32" srcset="clients/trackunit@2x.png 2x">
+        <img src="clients/hri.png" class="ml-32 w-32" srcset="clients/hri@2x.png 2x">
+      </div>
+    </section>
+
+    <section style="height: 1000px;" class="bg-white relative text-black">
       <div class="h-screen flex justify-center items-center w-screen">
-        <div>(logo'er)</div>
+        <h2 class="text-2xl">The people behind</h2>
+        <div class="max-w-md ml-20 leading-loose">
+          <p>Maria Therese and Kimu, both danish origin and fluent in English. </p>
+          <p>Together we share a collective and expansive work experience in Design, Sales, Communication and Personal Growth Development, creating a wonderful balance of Ying & Yang.</p>
+        </div>
       </div>
     </section>
   </body>

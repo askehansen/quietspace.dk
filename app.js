@@ -21,4 +21,19 @@ window.addEventListener("scroll", () => {
   const arrowdown = document.querySelector(".js-arrow-down")
   arrowdown.style = `opacity: ${(100-window.scrollY / 2) / 100}`
 
+  const clients = document.querySelector(".js-clients")
+  if (window.scrollY > 1960) {
+    clients.style = `transform: translateY(-${window.scrollY - 1960}px); opacity: ${(100 - (window.scrollY - 1960) / 3) / 100}`
+  }
+  else if (window.scrollY > 1000) {
+    let scroll = (window.scrollY - 1000 - 200)
+    if (scroll > 0) {
+      scroll = 0
+    }
+    clients.style = `transform: translateX(${scroll}px); opacity: ${((window.scrollY - 1000 + 100) / 3) / 100}`
+  }
+  else {
+    clients.style = `transform: opacity: 0`
+  }
+
 })
