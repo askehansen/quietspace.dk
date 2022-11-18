@@ -17,4 +17,8 @@ window.addEventListener("scroll", () => {
   else {
     quietspace.style = `opacity: 1`
   }
+
+  const arrowdown = document.querySelector(".js-arrow-down")
+  arrowdown.style = `opacity: ${(100-window.scrollY / 2) / 100}`
+
 })
