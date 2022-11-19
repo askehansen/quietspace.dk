@@ -12,7 +12,7 @@ export default class extends Controller {
   renderTitle (el) {
     if (this.scrollY > 460) {
       // leave
-      el.style = `transform: translateY(-${this.scrollY - 460}px); opacity: ${(100 - (this.scrollY - 460) / 3) / 100}`
+      el.style = `transform: translateX(${this.scrollY - 460}px); opacity: ${(100 - (this.scrollY - 460) / 3) / 100}`
     }
     else if (this.scrollY > -500) {
       // enter

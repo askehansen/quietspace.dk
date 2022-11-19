@@ -26,7 +26,6 @@ export default class extends Controller {
       if (height < 1.75) {
         height = 1.75
       }
-      console.log(height)
       el.style = `line-height: ${height}rem`
     }
   }
