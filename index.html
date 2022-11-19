@@ -3,44 +3,47 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Quietspace</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
-    <link rel="stylesheet" href="app.css">
-    <script type="text/javascript" src="app/assets/builds/application.js"></script>
+    <link rel="stylesheet" href="/app/assets/builds/application.css">
+    <script type="text/javascript" src="/app/assets/builds/application.js"></script>
   </head>
   <body class="bg-black text-white font-serif">
 
 
     <section style="height: 1500px;" class="relative" data-controller="intro">
       <div data-intro-target="arrowdown" class="fixed bottom-0 mb-5 inset-x-0">
-        <img src="arrow-sm-down.svg" class="mx-auto animate__animated animate__fadeInUp animate__delay-5s">
+        <img src="/arrow-sm-down.svg" class="mx-auto animate__animated animate__fadeInUp animate__delay-5s">
       </div>
       <div class="h-screen flex justify-center items-center w-screen fixed">
         <div class="flex flex-col transform scale-75 sm:scale-100">
           <div class="mb-3" data-intro-target="itsaboutthepractise">
-            <img src="its-about-the-practise.svg" alt="It's about the practise" class="opacity-0 animate__animated animate__slower animate__fadeInRight animate__delay-2s">
+            <img src="/its-about-the-practise.svg" alt="It's about the practise" class="opacity-0 animate__animated animate__slower animate__fadeInRight animate__delay-2s">
           </div>
           <div data-intro-target="quietspace">
-            <img src="quietspace.svg" alt="Quietspace" class="animate__animated animate__fadeIn animate__slower">
+            <img src="/quietspace.svg" alt="Quietspace" class="animate__animated animate__fadeIn animate__slower">
           </div>
           <div class="overflow-hidden" data-intro-target="mark">
-            <img src="mark.svg" class="ml-auto opacity-0 animate__animated animate__slower animate__fadeInDown animate__delay-1s">
+            <img src="/mark.svg" class="ml-auto opacity-0 animate__animated animate__slower animate__fadeInDown animate__delay-1s">
           </div>
         </div>
       </div>
     </section>
 
-    <section style="height: 1500px;" class="relative" data-controller="clients">
+    <section style="height: 1000px;" class="relative" data-controller="clients">
       <div data-clients-target="title" class="inset-0 fixed flex items-center ml-6 sm:ml-64 text-2xl opacity-0 w-20 leading-none">Our clients</div>
       <div class="space-y-32 flex flex-col items-center">
-        <img src="clients/rockstart.png" class="ml-32 w-32" srcset="clients/rockstart@2x.png 2x">
-        <img src="clients/techbbq.png" class="ml-32 w-32" srcset="clients/techbbq@2x.png 2x">
-        <img src="clients/coinify.png" class="ml-32 w-32" srcset="clients/coinify@2x.png 2x">
-        <img src="clients/impactly.png" class="ml-32 w-32" srcset="clients/impactly@2x.png 2x">
-        <img src="clients/trackunit.png" class="ml-32 w-32" srcset="clients/trackunit@2x.png 2x">
-        <img src="clients/hri.png" class="ml-32 w-32" srcset="clients/hri@2x.png 2x">
+        <img src="/clients/rockstart.png" class="ml-32 w-32" srcset="clients/rockstart@2x.png 2x">
+        <img src="/clients/techbbq.png" class="ml-32 w-32" srcset="clients/techbbq@2x.png 2x">
+        <img src="/clients/coinify.png" class="ml-32 w-32" srcset="clients/coinify@2x.png 2x">
+        <img src="/clients/impactly.png" class="ml-32 w-32" srcset="clients/impactly@2x.png 2x">
+        <img src="/clients/trackunit.png" class="ml-32 w-32" srcset="clients/trackunit@2x.png 2x">
+        <img src="/clients/hri.png" class="ml-32 w-32" srcset="clients/hri@2x.png 2x">
+      </div>
+    </section>
+
+    <section style="height: 1500px;" class="relative" data-controller="video">
+      <div class="inset-0 fixed flex items-center justify-center">
+        <iframe data-video-target="video" class="w-full aspect-video opacity-0" src="https://www.youtube.com/embed/xTY0SlyVfCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
 
@@ -52,6 +55,23 @@
             <p>Maria Therese and Kimu, both danish origin and fluent in English. </p>
             <p>Together we share a collective and expansive work experience in Design, Sales, Communication and Personal Growth Development, creating a wonderful balance of Ying & Yang.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="height: 3000px;" class="bg-white relative text-black" data-controller="testimonials">
+      <div data-testimonials-target="testimonials" class="inset-0 fixed space-x-64 flex items-center justify-center">
+        <div class="w-64 sm:w-96 leading-loose text-sm flex-none">
+          <p>“QuiteSpace and Maria have given me the most important space when developing my business -the space for personal growth. Through its unique surroundings, most skilled meditation teachings & full hearted people, QuiteSpace provides an impactful space for reconnecting, restoring & re-imagination. All essential practices for having a mentally healthy and fulfilling life…”</p>
+          <div class="italic mt-5">- Cecilie Willer, Founder at Today</div>
+        </div>
+        <div class="w-64 sm:w-96 leading-loose text-sm flex-none">
+          <p>“QuietSpace has given the team of Impactly a new holistic perspective on what it means to work - and that working fast, rushing, stressing, achieving and so on, is not what it’s all about. It’s just as important to slow down, disconnect and allow yourself to come back from a different angle and just breath. It can be easy to gain tunnel vision when you are absorbed by something, that we need to allow ourselves the opportunity to pull back for a moment and simply enjoy the journey of life together…”</p>
+          <div class="italic mt-5">- Johan Dubert, Adm. Director at Impactly</div>
+        </div>
+        <div class="w-64 sm:w-96 leading-loose text-sm flex-none">
+          <p>“QuietSpace is a fantastisk space to re-charge mentally and find some peace of mind which enables me to make important work decisions..”</p>
+          <div class="italic mt-5">- Morten Nissen, Leading programmer Coinify</div>
         </div>
       </div>
     </section>
