@@ -12,28 +12,28 @@
   </head>
   <body class="bg-black text-white font-serif">
 
-    <div class="js-arrow-down fixed bottom-0 mb-5 inset-x-0">
-      <img src="arrow-sm-down.svg" class="mx-auto animate__animated animate__fadeInUp animate__delay-5s">
-    </div>
 
-    <section style="height: 1500px;" class="relative">
+    <section style="height: 1500px;" class="relative" data-controller="intro">
+      <div data-intro-target="arrowdown" class="fixed bottom-0 mb-5 inset-x-0">
+        <img src="arrow-sm-down.svg" class="mx-auto animate__animated animate__fadeInUp animate__delay-5s">
+      </div>
       <div class="h-screen flex justify-center items-center w-screen fixed">
         <div class="flex flex-col transform scale-75 sm:scale-100">
-          <div class="mb-3 js-itsaboutthepractise">
+          <div class="mb-3" data-intro-target="itsaboutthepractise">
             <img src="its-about-the-practise.svg" alt="It's about the practise" class="opacity-0 animate__animated animate__slower animate__fadeInRight animate__delay-2s">
           </div>
-          <div class="js-quietspace">
+          <div data-intro-target="quietspace">
             <img src="quietspace.svg" alt="Quietspace" class="animate__animated animate__fadeIn animate__slower">
           </div>
-          <div class="overflow-hidden js-mark">
+          <div class="overflow-hidden" data-intro-target="mark">
             <img src="mark.svg" class="ml-auto opacity-0 animate__animated animate__slower animate__fadeInDown animate__delay-1s">
           </div>
         </div>
       </div>
     </section>
 
-    <section style="height: 1800px;" class="relative">
-      <div class="inset-0 fixed flex items-center ml-6 sm:ml-64 text-2xl js-clients opacity-0">Our clients</div>
+    <section style="height: 1500px;" class="relative" data-controller="clients">
+      <div data-clients-target="title" class="inset-0 fixed flex items-center ml-6 sm:ml-64 text-2xl opacity-0 w-20 leading-none">Our clients</div>
       <div class="space-y-32 flex flex-col items-center">
         <img src="clients/rockstart.png" class="ml-32 w-32" srcset="clients/rockstart@2x.png 2x">
         <img src="clients/techbbq.png" class="ml-32 w-32" srcset="clients/techbbq@2x.png 2x">
@@ -44,12 +44,14 @@
       </div>
     </section>
 
-    <section style="height: 1000px;" class="bg-white relative text-black">
-      <div class="h-screen flex justify-center items-center w-screen js-about px-5">
-        <h2 class="text-2xl text-right w-20 leading-tight js-peoplebehind">The people behind</h2>
-        <div class="max-w-md ml-10 leading-loose">
-          <p>Maria Therese and Kimu, both danish origin and fluent in English. </p>
-          <p>Together we share a collective and expansive work experience in Design, Sales, Communication and Personal Growth Development, creating a wonderful balance of Ying & Yang.</p>
+    <section style="height: 1000px;" class="bg-white relative text-black" data-controller="about">
+      <div data-about-target="about" class="h-screen flex justify-center items-center w-screen px-5">
+        <div class="flex items-start">
+          <h2 data-about-target="title" class="text-2xl text-right w-20 mt-2">The people behind</h2>
+          <div class="max-w-md ml-10 leading-loose">
+            <p>Maria Therese and Kimu, both danish origin and fluent in English. </p>
+            <p>Together we share a collective and expansive work experience in Design, Sales, Communication and Personal Growth Development, creating a wonderful balance of Ying & Yang.</p>
+          </div>
         </div>
       </div>
     </section>
