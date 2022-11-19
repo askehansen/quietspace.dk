@@ -36,4 +36,21 @@ window.addEventListener("scroll", () => {
     clients.style = `transform: opacity: 0`
   }
 
+  const about = document.querySelector(".js-about")
+  if (window.scrollY > 3000) {
+    about.style = `opacity: ${((window.scrollY - 3000) / 3) / 100}`
+  }
+  else {
+    about.style = `opacity: 0`
+  }
+  const peoplebehind = document.querySelector(".js-peoplebehind")
+  if (window.scrollY > 3000) {
+    let height = (window.scrollY - 3000)
+    if (height < 1.25) {
+      height = 1.25
+    }
+    console.log(height)
+    peoplebehind.style = `line-height: ${height}rem`
+  }
+
 })
