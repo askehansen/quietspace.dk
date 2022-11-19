@@ -12,10 +12,10 @@ window.addEventListener("scroll", () => {
 
   const quietspace = document.querySelector(".js-quietspace")
   if (window.scrollY > 400) {
-    quietspace.style = `opacity: ${(100 - (window.scrollY - 400) / 5) / 100}`
+    quietspace.style = `transform: scale(${(100 - (window.scrollY - 400) / 20) / 100}); opacity: ${(100 - (window.scrollY - 400) / 5) / 100}`
   }
   else {
-    quietspace.style = `opacity: 1`
+    quietspace.style = `transform: scale(1); opacity: 1`
   }
 
   const arrowdown = document.querySelector(".js-arrow-down")
