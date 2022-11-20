@@ -405,8 +405,6 @@ video {
   right: 0px;
 }.bottom-0{
   bottom: 0px;
-}.right-0{
-  right: 0px;
 }.bottom-10{
   bottom: 2.5rem;
 }.right-10{
@@ -432,10 +430,6 @@ video {
   margin-left: 2.5rem;
 }.mt-5{
   margin-top: 1.25rem;
-}.-mt-64{
-  margin-top: -16rem;
-}.mr-10{
-  margin-right: 2.5rem;
 }.mr-5{
   margin-right: 1.25rem;
 }.flex{
@@ -446,10 +440,6 @@ video {
   aspect-ratio: 16 / 9;
 }.h-screen{
   height: 100vh;
-}.h-10{
-  height: 2.5rem;
-}.h-6{
-  height: 1.5rem;
 }.h-5{
   height: 1.25rem;
 }.w-screen{
