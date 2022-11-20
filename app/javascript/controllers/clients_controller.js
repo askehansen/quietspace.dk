@@ -21,7 +21,7 @@ export default class extends SceneController {
       el.style = `transform: translateX(${scroll}px); opacity: ${((this.scrollY - -500 + 100) / 3) / 100}`
     }
     else {
-      el.style = `transform: opacity: 0`
-    } 
+      el.style = `transform: ; opacity: 0`
+    }
   }
 }

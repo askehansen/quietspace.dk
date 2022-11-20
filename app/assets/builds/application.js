@@ -2020,7 +2020,7 @@
         }
         el.style = `transform: translateX(${scroll}px); opacity: ${(this.scrollY - -500 + 100) / 3 / 100}`;
       } else {
-        el.style = `transform: opacity: 0`;
+        el.style = `transform: ; opacity: 0`;
       }
     }
   };
@@ -2082,12 +2082,65 @@
       if (this.scrollY > -1e3) {
         let val = (this.scrollY - 500) * -1;
         el.style = `transform: translateX(${val}px);`;
-      } else {
-        el.style = `transform: translateX(5000px);`;
       }
     }
   };
   __publicField(testimonials_controller_default, "targets", ["testimonials"]);
+
+  // app/javascript/controllers/gallery_controller.js
+  var gallery_controller_default = class extends scene_controller_default {
+    render() {
+      this.renderGallery(this.galleryTarget);
+    }
+    renderGallery(el) {
+      if (this.scrollY > -1e3) {
+        let x = (this.scrollY - 500) * -1;
+        let y = 0;
+        let width = 0;
+        this.galleryTarget.querySelectorAll("img").forEach((el2) => {
+          width += el2.offsetWidth;
+        });
+        let maxX = width - window.innerWidth;
+        if (maxX < x * -1) {
+          x = maxX * -1;
+          y = 0;
+          y = this.scrollY - width;
+          if (y < 0) {
+            y = 0;
+          } else {
+            y = y * -1;
+          }
+        } else {
+          y = 0;
+        }
+        if (y < 0) {
+          this.element.classList.remove("bg-white");
+        } else {
+          this.element.classList.add("bg-white");
+        }
+        el.style = `transform: translateX(${x}px) translateY(${y}px);`;
+      }
+    }
+  };
+  __publicField(gallery_controller_default, "targets", ["gallery"]);
+
+  // app/javascript/controllers/contact_controller.js
+  var contact_controller_default = class extends scene_controller_default {
+    render() {
+      this.renderContact(this.contactTarget);
+    }
+    renderContact(el) {
+      let scale = (this.scrollY + window.innerHeight) / 3 / 100;
+      scale = 2 - scale;
+      if (scale > 2) {
+        scale = 2;
+      } else if (scale < 1) {
+        scale = 1;
+      }
+      el.style = `transform: scale(${scale}); opacity: ${(this.scrollY + window.innerHeight) / 3 / 100}`;
+    }
+  };
+  __publicField(contact_controller_default, "targets", ["contact"]);
 
   // app/javascript/controllers/index.js
   application.register("intro", intro_controller_default);
@@ -2095,5 +2148,7 @@
   application.register("about", about_controller_default);
   application.register("video", video_controller_default);
   application.register("testimonials", testimonials_controller_default);
+  application.register("gallery", gallery_controller_default);
+  application.register("contact", contact_controller_default);
 })();
 //# sourceMappingURL=application.js.map

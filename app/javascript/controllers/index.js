@@ -14,3 +14,9 @@ application.register("video", VideoController)
 
 import TestimonialsController from "./testimonials_controller.js"
 application.register("testimonials", TestimonialsController)
+
+import GalleryController from "./gallery_controller.js"
+application.register("gallery", GalleryController)
+
+import ContactController from "./contact_controller.js"
+application.register("contact", ContactController)
