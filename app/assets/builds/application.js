@@ -2087,43 +2087,6 @@
   };
   __publicField(testimonials_controller_default, "targets", ["testimonials"]);
 
-  // app/javascript/controllers/gallery_controller.js
-  var gallery_controller_default = class extends scene_controller_default {
-    render() {
-      this.renderGallery(this.galleryTarget);
-    }
-    renderGallery(el) {
-      if (this.scrollY > -1e3) {
-        let x = (this.scrollY - 500) * -1;
-        let y = 0;
-        let width = 0;
-        this.galleryTarget.querySelectorAll("img").forEach((el2) => {
-          width += el2.offsetWidth;
-        });
-        let maxX = width - window.innerWidth;
-        if (maxX < x * -1) {
-          x = maxX * -1;
-          y = 0;
-          y = this.scrollY - width;
-          if (y < 0) {
-            y = 0;
-          } else {
-            y = y * -1;
-          }
-        } else {
-          y = 0;
-        }
-        if (y < 0) {
-          this.element.classList.remove("bg-white");
-        } else {
-          this.element.classList.add("bg-white");
-        }
-        el.style = `transform: translateX(${x}px) translateY(${y}px);`;
-      }
-    }
-  };
-  __publicField(gallery_controller_default, "targets", ["gallery"]);
-
   // app/javascript/controllers/contact_controller.js
   var contact_controller_default = class extends scene_controller_default {
     render() {
@@ -2148,7 +2111,6 @@
   application.register("about", about_controller_default);
   application.register("video", video_controller_default);
   application.register("testimonials", testimonials_controller_default);
-  application.register("gallery", gallery_controller_default);
   application.register("contact", contact_controller_default);
 })();
 //# sourceMappingURL=application.js.map
