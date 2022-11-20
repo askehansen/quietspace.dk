@@ -1,13 +1,10 @@
-import { Controller } from "@hotwired/stimulus"
+import SceneController from "./scene_controller"
 
-export default class extends Controller {
+export default class extends SceneController {
   static targets = ["testimonials"]
   
-  connect () {
+  render () {
     this.renderTestimonials(this.testimonialsTarget)
-    window.addEventListener("scroll", () => {
-      this.renderTestimonials(this.testimonialsTarget)
-    })
   }
 
   renderTestimonials (el) {
@@ -19,7 +16,4 @@ export default class extends Controller {
     }
   }
 
-  get scrollY () {
-    return -this.element.getBoundingClientRect().top
-  }
 }

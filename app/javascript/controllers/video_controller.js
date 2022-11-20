@@ -1,12 +1,10 @@
-import { Controller } from "@hotwired/stimulus"
+import SceneController from "./scene_controller"
 
-export default class extends Controller {
+export default class extends SceneController {
   static targets = ["video"]
   
-  connect () {
-    window.addEventListener("scroll", () => {
-      this.renderVideo(this.videoTarget)
-    })
+  render () {
+    this.renderVideo(this.videoTarget)
   }
 
   renderVideo(el) {
@@ -20,12 +18,8 @@ export default class extends Controller {
       el.style = `opacity: ${opacity}; transform: scale(${scale})`
     }
     else {
-      el.style = "opacity: 0; pointer-events: none"
+      el.style = "opacity: 0;"
     }
   }
 
-
-  get scrollY () {
-    return -this.element.getBoundingClientRect().top
-  }
 }

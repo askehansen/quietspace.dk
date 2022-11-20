@@ -1942,15 +1942,45 @@
   application.debug = true;
   window.Stimulus = application;
 
-  // app/javascript/controllers/intro_controller.js
-  var intro_controller_default = class extends Controller {
+  // app/javascript/controllers/scene_controller.js
+  var scene_controller_default = class extends Controller {
+    visible = false;
     connect() {
+      let observer = new IntersectionObserver(
+        (entries) => {
+          this.visible = entries[0].isIntersecting === true;
+          if (this.visible) {
+            this.element.classList.remove("opacity-0");
+            this.element.classList.remove("-z-10");
+          } else {
+            this.element.classList.add("opacity-0");
+            this.element.classList.add("-z-10");
+          }
+        },
+        {
+          threshold: [0]
+        }
+      );
+      observer.observe(this.element);
+      this.render();
       window.addEventListener("scroll", () => {
-        this.renderItsaboutthepractise(this.itsaboutthepractiseTarget);
-        this.renderMark(this.markTarget);
-        this.renderQuietspace(this.quietspaceTarget);
-        this.renderArrowdown(this.arrowdownTarget);
+        if (this.visible) {
+          this.render();
+        }
       });
+    }
+    get scrollY() {
+      return -this.element.getBoundingClientRect().top;
+    }
+  };
+
+  // app/javascript/controllers/intro_controller.js
+  var intro_controller_default = class extends scene_controller_default {
+    render() {
+      this.renderItsaboutthepractise(this.itsaboutthepractiseTarget);
+      this.renderMark(this.markTarget);
+      this.renderQuietspace(this.quietspaceTarget);
+      this.renderArrowdown(this.arrowdownTarget);
     }
     renderItsaboutthepractise(el) {
       el.style = `transform: translateX(-${this.scrollY}px); opacity: ${(100 - this.scrollY / 2) / 100}`;
@@ -1972,18 +2002,13 @@
     renderArrowdown(el) {
       el.style = `opacity: ${(100 - this.scrollY / 2) / 100}`;
     }
-    get scrollY() {
-      return -this.element.getBoundingClientRect().top;
-    }
   };
   __publicField(intro_controller_default, "targets", ["itsaboutthepractise", "quietspace", "mark", "arrowdown"]);
 
   // app/javascript/controllers/clients_controller.js
-  var clients_controller_default = class extends Controller {
-    connect() {
-      window.addEventListener("scroll", () => {
-        this.renderTitle(this.titleTarget);
-      });
+  var clients_controller_default = class extends scene_controller_default {
+    render() {
+      this.renderTitle(this.titleTarget);
     }
     renderTitle(el) {
       if (this.scrollY > 460) {
@@ -1998,19 +2023,14 @@
         el.style = `transform: opacity: 0`;
       }
     }
-    get scrollY() {
-      return -this.element.getBoundingClientRect().top;
-    }
   };
   __publicField(clients_controller_default, "targets", ["title"]);
 
   // app/javascript/controllers/about_controller.js
-  var about_controller_default = class extends Controller {
-    connect() {
-      window.addEventListener("scroll", () => {
-        this.renderAbout(this.aboutTarget);
-        this.renderTitle(this.titleTarget);
-      });
+  var about_controller_default = class extends scene_controller_default {
+    render() {
+      this.renderAbout(this.aboutTarget);
+      this.renderTitle(this.titleTarget);
     }
     renderAbout(el) {
       if (this.scrollY > -300) {
@@ -2029,18 +2049,13 @@
         el.style = `line-height: ${height}rem`;
       }
     }
-    get scrollY() {
-      return -this.element.getBoundingClientRect().top;
-    }
   };
   __publicField(about_controller_default, "targets", ["about", "title"]);
 
   // app/javascript/controllers/video_controller.js
-  var video_controller_default = class extends Controller {
-    connect() {
-      window.addEventListener("scroll", () => {
-        this.renderVideo(this.videoTarget);
-      });
+  var video_controller_default = class extends scene_controller_default {
+    render() {
+      this.renderVideo(this.videoTarget);
     }
     renderVideo(el) {
       if (this.scrollY > 0) {
@@ -2052,22 +2067,16 @@
         }
         el.style = `opacity: ${opacity}; transform: scale(${scale})`;
       } else {
-        el.style = "opacity: 0; pointer-events: none";
+        el.style = "opacity: 0;";
       }
-    }
-    get scrollY() {
-      return -this.element.getBoundingClientRect().top;
     }
   };
   __publicField(video_controller_default, "targets", ["video"]);
 
   // app/javascript/controllers/testimonials_controller.js
-  var testimonials_controller_default = class extends Controller {
-    connect() {
+  var testimonials_controller_default = class extends scene_controller_default {
+    render() {
       this.renderTestimonials(this.testimonialsTarget);
-      window.addEventListener("scroll", () => {
-        this.renderTestimonials(this.testimonialsTarget);
-      });
     }
     renderTestimonials(el) {
       if (this.scrollY > -1e3) {
@@ -2076,9 +2085,6 @@
       } else {
         el.style = `transform: translateX(5000px);`;
       }
-    }
-    get scrollY() {
-      return -this.element.getBoundingClientRect().top;
     }
   };
   __publicField(testimonials_controller_default, "targets", ["testimonials"]);

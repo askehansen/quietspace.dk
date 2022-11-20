@@ -1,15 +1,13 @@
-import { Controller } from "@hotwired/stimulus"
+import SceneController from "./scene_controller"
 
-export default class extends Controller {
+export default class extends SceneController {
   static targets = ["itsaboutthepractise", "quietspace", "mark", "arrowdown"]
-  
-  connect () {
-    window.addEventListener("scroll", () => {
-      this.renderItsaboutthepractise(this.itsaboutthepractiseTarget)
-      this.renderMark(this.markTarget)
-      this.renderQuietspace(this.quietspaceTarget)
-      this.renderArrowdown(this.arrowdownTarget)
-    })
+
+  render () {
+    this.renderItsaboutthepractise(this.itsaboutthepractiseTarget)
+    this.renderMark(this.markTarget)
+    this.renderQuietspace(this.quietspaceTarget)
+    this.renderArrowdown(this.arrowdownTarget)
   }
 
   renderItsaboutthepractise (el) {
@@ -40,9 +38,5 @@ export default class extends Controller {
   renderArrowdown (el) {
     // leave
     el.style = `opacity: ${(100-this.scrollY / 2) / 100}`
-  }
-
-  get scrollY () {
-    return -this.element.getBoundingClientRect().top
   }
 }
