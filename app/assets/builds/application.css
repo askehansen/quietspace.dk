@@ -434,8 +434,6 @@ video {
   width: 8rem;
 }.w-full{
   width: 100%;
-}.w-96{
-  width: 24rem;
 }.w-64{
   width: 16rem;
 }.max-w-md{
@@ -514,13 +512,13 @@ video {
   opacity: 0;
 }@font-face {
   font-family: 'Butler';
-  src: url('/fonts/butler/Butler_Regular.otf') format("opentype");
+  src: url('/app/assets/fonts/butler/Butler_Regular.otf') format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: auto;
 }@font-face {
   font-family: 'Butler';
-  src: url('/fonts/butler/Butler_Medium.otf') format("opentype");
+  src: url('/app/assets/fonts/butler/Butler_Medium.otf') format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: auto;
