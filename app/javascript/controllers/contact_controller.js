@@ -8,7 +8,7 @@ export default class extends SceneController {
   }
 
   renderContact (el) {
-    let scale = ((this.scrollY + window.innerHeight) / 3) / 100
+    let scale = ((this.scrollY + window.innerHeight - 200) / 3) / 100
     scale = 2 - scale
     if (scale > 2) {
       scale = 2
@@ -16,7 +16,7 @@ export default class extends SceneController {
     else if (scale < 1) {
       scale = 1
     }
-    el.style = `transform: scale(${scale}); opacity: ${((this.scrollY + window.innerHeight) / 3) / 100}`
+    el.style = `transform: scale(${scale}); opacity: ${((this.scrollY + window.innerHeight - 200) / 3) / 100}`
   }
 
 }

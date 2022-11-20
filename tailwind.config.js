@@ -6,6 +6,9 @@ module.exports = {
   content: ["./index.html", "./app/**/*.js"],
   theme: {
     extend: {
+      height: {
+        "sceen/2": "50vh"
+      },
       zIndex: {
         "-10": "-10"
       },
