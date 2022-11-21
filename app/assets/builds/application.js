@@ -2093,7 +2093,7 @@
       this.renderContact(this.contactTarget);
     }
     renderContact(el) {
-      let scale = (this.scrollY + window.innerHeight - 200) / 3 / 100;
+      let scale = (this.scrollY + window.innerHeight - 200) / 5 / 100;
       scale = 2 - scale;
       if (scale > 2) {
         scale = 2;
@@ -2105,6 +2105,19 @@
   };
   __publicField(contact_controller_default, "targets", ["contact"]);
 
+  // app/javascript/controllers/scrollto_controller.js
+  var scrollto_controller_default = class extends Controller {
+    go() {
+      this.target.scrollIntoView({ behavior: "smooth" });
+    }
+    get target() {
+      return document.querySelector(this.targetValue);
+    }
+  };
+  __publicField(scrollto_controller_default, "values", {
+    target: String
+  });
+
   // app/javascript/controllers/index.js
   application.register("intro", intro_controller_default);
   application.register("clients", clients_controller_default);
@@ -2112,5 +2125,6 @@
   application.register("video", video_controller_default);
   application.register("testimonials", testimonials_controller_default);
   application.register("contact", contact_controller_default);
+  application.register("scrollto", scrollto_controller_default);
 })();
 //# sourceMappingURL=application.js.map

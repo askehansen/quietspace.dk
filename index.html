@@ -11,9 +11,11 @@
   <body class="bg-black text-white font-serif">
 
 
-    <section style="height: 1500px;" class="relative" data-controller="intro">
-      <div data-intro-target="arrowdown" class="fixed bottom-0 mb-5 inset-x-0">
-        <img src="/app/assets/images/arrow-sm-down.svg" class="mx-auto animate__animated animate__fadeInUp animate__delay-5s">
+    <section id="intro" style="height: 1500px;" class="relative" data-controller="intro">
+      <div data-intro-target="arrowdown" class="fixed bottom-0 inset-x-0 text-center z-10">
+        <button type="button" data-controller="scrollto" data-scrollto-target-value="#clients" data-action="scrollto#go" class="p-5 animate__animated animate__fadeInUp animate__delay-5s">
+          <img src="/app/assets/images/arrow-sm-down.svg">
+        </button>
       </div>
       <div class="h-screen flex justify-center items-center w-screen fixed">
         <div class="flex flex-col transform scale-75 sm:scale-100">
@@ -30,7 +32,7 @@
       </div>
     </section>
 
-    <section style="height: 1000px;" class="relative" data-controller="clients">
+    <section id="clients" style="height: 1000px;" class="relative" data-controller="clients">
       <div data-clients-target="title" class="inset-0 fixed flex items-center ml-6 sm:ml-64 text-2xl opacity-0 w-20 leading-none">Our clients</div>
       <div class="space-y-32 flex flex-col items-center">
         <img src="/app/assets/images/clients/rockstart.png" class="ml-32 w-32" srcset="/app/assets/images/clients/rockstart@2x.png 2x">
@@ -91,6 +93,7 @@
 
     <section style="height: 1000px;" class="relative" data-controller="contact">
       <div data-contact-target="contact" class="inset-0 fixed flex items-center justify-center">
+        <div class="absolute top-0 left-10"><img src="/app/assets/images/mark.svg" class="h-14 sm:h-20" data-controller="scrollto" data-scrollto-target-value="#intro" data-action="click->scrollto#go"></div>
         <div class="absolute bottom-10 right-10"><img src="/app/assets/images/quietspace.svg" alt="Quietspace" class="h-5"></div>
         <div class="flex">
           <div class="mr-5 w-10 text-2xl text-right leading-none">visit us</div>

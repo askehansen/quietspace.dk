@@ -8,7 +8,7 @@ export default class extends SceneController {
   }
 
   renderContact (el) {
-    let scale = ((this.scrollY + window.innerHeight - 200) / 3) / 100
+    let scale = ((this.scrollY + window.innerHeight - 200) / 5) / 100
     scale = 2 - scale
     if (scale > 2) {
       scale = 2

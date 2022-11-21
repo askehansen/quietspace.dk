@@ -17,3 +17,6 @@ application.register("testimonials", TestimonialsController)
 
 import ContactController from "./contact_controller.js"
 application.register("contact", ContactController)
+
+import ScrolltoController from "./scrollto_controller.js"
+application.register("scrollto", ScrolltoController)
