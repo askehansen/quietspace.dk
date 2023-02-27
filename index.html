@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/app/assets/builds/application.css">
     <script type="text/javascript" src="/app/assets/builds/application.js"></script>
   </head>
-  <body class="bg-black text-white font-serif">
+  <body class="bg-brand text-white font-serif">
 
 
     <section id="intro" style="height: 1500px;" class="relative" data-controller="intro">
@@ -46,23 +46,30 @@
 
     <section style="height: 1500px;" class="relative" data-controller="video">
       <div class="inset-0 fixed flex items-center justify-center">
-        <iframe data-video-target="video" class="w-full aspect-video opacity-0" src="https://www.youtube.com/embed/xTY0SlyVfCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <img src="/app/assets/images/quietspace.jpg" data-video-target="video" class="w-screen h-screen object-cover">
+        <!-- <iframe data-video-target="video" class="w-full aspect-video opacity-0" src="https://www.youtube.com/embed/xTY0SlyVfCQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       </div>
     </section>
 
-    <section style="height: 1000px;" class="bg-white relative text-black" data-controller="about">
+    <section style="height: 1000px;" class="bg-white relative text-brand" data-controller="about">
       <div data-about-target="about" class="h-screen flex justify-center items-center w-screen px-5">
         <div class="flex items-start">
           <h2 data-about-target="title" class="text-2xl text-right w-20 mt-2">The people behind</h2>
           <div class="max-w-md ml-10 leading-loose">
-            <p>Maria Therese and Kimu, both danish origin and fluent in English. </p>
-            <p>Together we share a collective and expansive work experience in Design, Sales, Communication and Personal Growth Development, creating a wonderful balance of Ying & Yang.</p>
+
+<p>With a background in interior design from Parsons School of Design NYC and Paris, and an entrpreneural mind-set, Maria opened Tea Time, Copenhagen’s first modern tea parlour in 2003 and with that paved the way for the tea trend in Copenhagen. Tea Time was features in infinite national as well as international newspapers and magazines.</p>
+
+<p>In 2019 Maria opened QuietSpace at Matrikel1 in the heart of Copenhagen, making it Copenhagen’s first in-house “mental fitness center”.</p>
+
+<!-- <p>Maria has over 20 years of entrepreneurial experience within retail and design and a deeply engaged passion and commitment for creating interior spaces for humans to thrive in their work and their lives. </p> -->
+
+            <!-- <p>With a background in interior design from Parsons School of Design NYC and Paris, and an entrpreneural mind-set, Maria opened Tea Time, Copenhagen’s first modern tea parlour in 2003 and with that paved the way for the tea trend in Copenhagen. Tea Time was about slowing down in the midst of our busy day to day lives. Tea Time expanded with several locations in Copenhagen, as well as a summer franchise on the island of Bornholm and was features in infinite national as well as international newspapers and magazines.</p> -->
           </div>
         </div>
       </div>
     </section>
 
-    <section style="height: 2500px;" class="bg-white relative text-black" data-controller="testimonials">
+    <section style="height: 2500px;" class="bg-white relative text-brand" data-controller="testimonials">
       <div data-testimonials-target="testimonials" class="inset-0 fixed space-x-64 flex items-center justify-center">
         <div class="w-64 sm:w-96 leading-loose text-sm flex-none">
           <p>“QuiteSpace and Maria have given me the most important space when developing my business -the space for personal growth. Through its unique surroundings, most skilled meditation teachings & full hearted people, QuiteSpace provides an impactful space for reconnecting, restoring & re-imagination. All essential practices for having a mentally healthy and fulfilling life…”</p>
