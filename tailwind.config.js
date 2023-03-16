@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: "#2A5972"
+        brand: "#CCA55D",
+        secondary: "#2A5972"
       },
       height: {
         "sceen/2": "50vh"
